@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI Calculator</title>
+    <!-- Use Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Title & Introduction -->
+        <div class="header-section">
+            <h1>ROI Calculator</h1>
+            <p>Calculate your Return on Investment and track your annualized gains effortlessly.</p>
+        </div>
+
+        <!-- Calculator Layout -->
+        <div class="calc-layout">
+            <!-- Inputs -->
+            <div class="input-panel">
+                <div class="input-group">
+                    <label>Initial Investment ($)</label>
+                    <input type="number" id="initial-investment" placeholder="e.g. 1000" min="0" step="any">
+                </div>
+                <div class="input-group">
+                    <label>Amount Returned ($)</label>
+                    <input type="number" id="final-value" placeholder="e.g. 1200" min="0" step="any">
+                </div>
+                <div class="input-group">
+                    <label>Investment Length (Years)</label>
+                    <input type="number" id="investment-years" placeholder="e.g. 1 or 2.5" min="0.01" step="any">
+                </div>
+                <button id="calc-btn">Calculate ROI <span>→</span></button>
+            </div>
+
+            <!-- Results -->
+            <div class="results-panel">
+                <div class="result-card highlight">
+                    <h3>Return on Investment (ROI)</h3>
+                    <h2 id="result-roi">--%</h2>
+                </div>
+                <div class="result-card">
+                    <h3>Annualized ROI</h3>
+                    <h2 id="result-annual-roi">--%</h2>
+                </div>
+                <div class="result-row">
+                    <div class="result-card small">
+                        <h3>Investment Gain / Loss</h3>
+                        <p id="result-gain">$0.00</p>
+                    </div>
+                    <div class="result-card small">
+                        <h3>Total Value</h3>
+                        <p id="result-total">$0.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

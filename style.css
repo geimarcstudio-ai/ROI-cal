@@ -1,0 +1,201 @@
+/* style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0b0216;
+    background-image: radial-gradient(circle at top left, #290a59 0%, #0b0216 50%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 950px;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header-section h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #b026ff, #5064e3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.header-section p {
+    font-size: 16px;
+    color: #b3a8c7;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.calc-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .calc-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Base Glassmorphic Panel */
+.input-panel, .results-panel {
+    background: rgba(20, 10, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #a0a0a0;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #b026ff;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#calc-btn {
+    background: linear-gradient(90deg, #b026ff, #5064e3);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(176, 38, 255, 0.3);
+}
+
+#calc-btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 6px 20px rgba(176, 38, 255, 0.5);
+}
+
+#calc-btn:active {
+    transform: scale(0.98);
+}
+
+/* Results Formatting */
+.result-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.result-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.result-card.highlight {
+    background: rgba(176, 38, 255, 0.1);
+    border-color: rgba(176, 38, 255, 0.3);
+}
+
+.result-card h3 {
+    font-size: 14px;
+    color: #a0a0a0;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.result-card h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+}
+
+.result-card.highlight h2 {
+    background: linear-gradient(90deg, #b026ff, #5064e3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.result-row {
+    display: flex;
+    gap: 20px;
+}
+
+.result-row .result-card {
+    flex: 1;
+    padding: 20px;
+}
+
+.result-card.small h3 {
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.result-card.small p {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Gain colors logic */
+.positive {
+    color: #00e676 !important;
+}
+.negative {
+    color: #ff4757 !important;
+}
